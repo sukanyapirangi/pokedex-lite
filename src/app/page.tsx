@@ -65,6 +65,12 @@ setPokemon(formatted);
      <main className="p-6">
       <h1 className="text-3xl font-bold text-center mb-6">Pokedex Lite</h1>
       <div className="flex justify-end mb-4">
+  <a href="/login" className="px-3 py-1 bg-blue-500 text-white rounded text-sm">
+    Login
+  </a>
+</div>
+
+      <div className="flex justify-end mb-4">
   {session ? (
     <div className="flex items-center gap-2">
       <span className="text-sm">Hi, {session.user?.name}</span>
@@ -76,15 +82,11 @@ setPokemon(formatted);
       </button>
     </div>
   ) : (
-    <button
-      onClick={() => signIn("google")}
-      className="px-3 py-1 text-sm bg-blue-500 text-white rounded"
-    >
-      Login with Google
-    </button>
+    <a href="/login" className="px-3 py-1 bg-blue-500 text-white rounded text-sm">
+      Login
+    </a>
   )}
 </div>
-
 
       <div className="text-center mb-4">
   <input
@@ -110,7 +112,7 @@ setPokemon(formatted);
       </option>
     ))}
   </select>
-</div>
+    </div>
 
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {pokemon
@@ -132,7 +134,7 @@ setPokemon(formatted);
                   abilities: fullData.abilities,
                     });
                      }}
-                    className="cursor-pointer bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform hover:scale-105 hover:shadow-x1"
+                    className="cursor-pointer bg-white shadow-md/90 rounded-lg p-4 flex flex-col items-center transition-transform hover:scale-105 hover:shadow-x1"
                    >
 
               <img src={p.image} alt={p.name} className="w-20 h-20 mb-2" />
@@ -246,7 +248,7 @@ setPokemon(formatted);
                    </div>
                   </div>
                  )}
-                 </main>
-      </>
+      </main>
+    </>
   );
 }
